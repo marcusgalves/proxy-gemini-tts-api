@@ -1,0 +1,29 @@
+{
+  "name": "gemini-tts-proxy-api",
+  "version": "1.0.0",
+  "description": "API proxy for Google Gemini TTS with HTTP, HTTPS, and SOCKS5 proxy support.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gemini",
+    "tts",
+    "proxy",
+    "api",
+    "n8n"
+  ],
+  "author": "Gemini",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "https-proxy-agent": "^7.0.5",
+    "socks-proxy-agent": "^8.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

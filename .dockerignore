@@ -1,0 +1,8 @@
+# Ignora tudo que já está no .gitignore
+.git
+.gitignore
+.dockerignore
+Dockerfile
+node_modules
+npm-debug.log
+README.md
