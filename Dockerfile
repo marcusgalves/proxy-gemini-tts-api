@@ -1,14 +1,14 @@
 # Estágio 1: Builder - Instala dependências
-# Usamos uma imagem base que tem suporte a múltiplas arquiteturas (linux/amd64, linux/arm64)
-FROM --platform=$BUILDPLATFORM node:18-alpine AS builder
+# Remove o --platform=$BUILDPLATFORM para permitir build nativo para cada arquitetura
+FROM node:18-alpine AS builder
 
 WORKDIR /usr/src/app
 
-# Copia package.json e package-lock.json (se existir)
+# Copia package.json e também o package-lock.json se ele existir
 COPY package*.json ./
 
-# Instala as dependências de produção
-RUN npm ci --only=production
+# Instala as dependências
+RUN npm install --only=production
 
 # Estágio 2: Final - Cria a imagem final otimizada
 FROM node:18-alpine
